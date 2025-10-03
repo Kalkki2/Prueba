@@ -4,15 +4,7 @@
 
 ## 📖 Índice
 1. [Capítulo I: Introducción](#capítulo-i-introducción)
-2. [Estructura del Repositorio](#-estructura-del-repositorio)
-3. [Contenido por Temas](#-contenido-por-temas)
-   - [Tema 01: Permisos y Roles](#tema-01-permisos-y-roles)
-   - [Tema 02: Procedimientos y Funciones Almacenadas](#tema-02-procedimientos-y-funciones-almacenadas)
-   - [Tema 03: Optimización de Consultas con Índices](#tema-03-optimización-de-consultas-con-índices)
-   - [Tema 04: Procedimientos y Funciones Avanzadas](#tema-04-procedimientos-y-funciones-avanzadas)
-4. [Sistema de Gestión Veterinaria](#-sistema-de-gestión-veterinaria)
-5. [Documento Principal](#-documento-principal)
-6. [Autores](#-autores)
+
 
 ---
 
@@ -32,4 +24,36 @@ Una clínica veterinaria desea implementar una base de datos para gestionar la i
 - Un tratamiento debe permitir la aplicación de varios medicamentos
 - De los medicamentos se necesita conocer: Nombre comercial, monodroga, presentación y laboratorio que lo comercializa.
 
+Se deben considerar las siguientes restricciones en el diseño físico:
 
+- La longitud del campo ‘dni’ debe ser igual o menor a 8 caracteres
+- El campo ‘correo_electronico’ debe ser un valor único.
+- El campo ‘fecha’ por defecto toma la fecha actual.
+- La edad de la mascota no puede superar los 30 años.
+- Se debe registrar en forma automática la fecha del sistema y usuario de base de datos que crean los registros de citas. - Agregar estos dos campos a la tabla.
+
+### Tema: Implementacion de una Base de datos para la Gestion de una Clinica Veterinaria.
+**Definicion del Problema:** La clínica veterinaria necesita una solución para gestionar eficientemente la información de sus pacientes, dueños, citas médicas y tratamientos.
+
+### Objetivo del Trabajo Práctico (qué se va a hacer)
+**Objetivo General:** Desarrollar una base de datos que permita la gestión integral de la información en una clínica veterinaria.
+**Objetivos Específicos:**
+
+- Implementar el manejo de permisos a nivel de usuarios.
+- Crear procedimientos y funciones almacenadas para la gestión de datos.
+- Optimizar consultas mediante el uso de índices.
+
+**Requisitos:**
+
+- Mascotas: Código único, nombre, especie, raza, fecha de nacimiento, peso, condiciones médicas especiales.
+- Dueños: Número de identificación único, DNI, nombre, dirección, teléfono, correo electrónico.
+- Citas Médicas: Motivo de la cita, veterinario asignado, observaciones, asociada a una mascota y un veterinario.
+- Veterinarios: Número de licencia profesional, nombre completo, especialidad, horario de atención.
+- Tratamientos: Nombre del tratamiento, duración, medicamentos indicados, indicaciones relevantes, asociado a una cita.
+- Medicamentos: Nombre comercial, monodroga, presentación, laboratori
+
+**Alcance**
+
+-Mejorar la organización y acceso a la información de mascotas y dueños.
+- Facilitar el registro y seguimiento de citas médicas y tratamientos.
+- Asegurar la integridad y seguridad de los datos.
