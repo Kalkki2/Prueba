@@ -12,12 +12,12 @@
 
 ## 📖 Índice
 1. [Capítulo I: Introducción](#capítulo-i-introducción)
-2. [Capítulo IV: Desarrollo del Tema/Resultados](#desarrollo-del-tema--resultados))
+2. [Capítulo IV: Desarrollo del Tema / Resultados](#capítulo-iv-desarrollo-del-tema--resultados)
 
 
 ---
 
-## 📌 Capítulo I: Introducción
+## CAPÍTULO I: INTRODUCCIÓN
 
 ### Caso de estudio
 Una clínica veterinaria desea implementar una base de datos para gestionar la información de sus pacientes (mascotas), dueños, citas médicas y tratamientos.
@@ -39,7 +39,8 @@ Se deben considerar las siguientes restricciones en el diseño físico:
 - El campo ‘correo_electronico’ debe ser un valor único.
 - El campo ‘fecha’ por defecto toma la fecha actual.
 - La edad de la mascota no puede superar los 30 años.
-- Se debe registrar en forma automática la fecha del sistema y usuario de base de datos que crean los registros de citas. - Agregar estos dos campos a la tabla.
+- Se debe registrar en forma automática la fecha del sistema y usuario de base de datos que crean los registros de citas.
+- Agregar estos dos campos a la tabla.
 
 ### Tema: Implementacion de una Base de datos para la Gestion de una Clinica Veterinaria.
 **Definicion del Problema:** La clínica veterinaria necesita una solución para gestionar eficientemente la información de sus pacientes, dueños, citas médicas y tratamientos.
@@ -68,7 +69,7 @@ Se deben considerar las siguientes restricciones en el diseño físico:
 - Asegurar la integridad y seguridad de los datos.
 
 
-### 📌 CAPÍTULO IV: DESARROLLO DEL TEMA
+## CAPÍTULO IV: DESARROLLO DEL TEMA / RESULTADOS
 ## Diseño del modelo relacional para el sistema: Gestión Veterinaria.
 Este modelo captura la estructura básica de un sistema para registrar información sobre dueños, mascotas, citas veterinarias, tratamientos y medicamentos utilizado en la clínica veterinaria.
 
