@@ -75,7 +75,7 @@ Este modelo captura la estructura básica de un sistema para registrar informaci
 
 ## Diagrama relacional
 
-![image alt](https://github.com/Kalkki2/Prueba/blob/dc11679f0e5a6fb119d29395be2fe2e4207ac52e/prueba_git/erdplus%20(18).png)
+![image alt](https://github.com/Kalkki2/Prueba/blob/c7ce7795ed9fa8373fd4aee6bbfec8d0c7dd7160/prueba_git/erdplus%20(18).png)
 
 
 
