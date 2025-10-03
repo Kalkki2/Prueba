@@ -1,4 +1,4 @@
-# 📌 Bases de Datos I - Proyecto de Estudio
+# PRESENTACIÓN: Sistema de Gestion de Informacion para Clinica Veterinaria
 
 Este espacio propone presentar la información para organizar el desarrollo del **Sistema de Gestión e Información de la Clínica Veterinaria**.  
 Esta tarea nos fue asignada en la asignatura **Bases de Datos I (FaCENA - UNNE)**.
