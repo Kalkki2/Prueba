@@ -5,10 +5,10 @@
 **Asignatura: Bases de Datos I (FaCENA-UNNE)**
 
 **Integrantes**
-- Beck, Pablo
-- Belucci, Lautaro
-- Hamm, Abdul
-- Silva, Estela Maris
+- Albarracin, Anibal
+- Beck, Pablo Adrian
+- Diaz, Federico Hilario
+- Encina, Nahuel
 
 ## 📖 Índice
 1. [Capítulo I: Introducción](#capítulo-i-introducción)
