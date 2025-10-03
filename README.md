@@ -2,6 +2,14 @@
 
 ---
 
+**Asignatura: Bases de Datos I (FaCENA-UNNE)**
+
+**Integrantes**
+- Beck, Pablo
+- Belucci, Lautaro
+- Hamm, Abdul
+- Silva, Estela Maris
+
 ## 📖 Índice
 1. [Capítulo I: Introducción](#capítulo-i-introducción)
 2. [Capítulo IV: Desarrollo del Tema/Resultados](#desarrollo-del-tema--resultados))
