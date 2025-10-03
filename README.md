@@ -79,6 +79,7 @@ Este modelo captura la estructura básica de un sistema para registrar informaci
 
 
 
+[Descargar PDF](prueba_git/diccionario_datos.pdf)
 
 
 
