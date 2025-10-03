@@ -1,13 +1,9 @@
 # PRESENTACIÓN: Sistema de Gestion de Informacion para Clinica Veterinaria
 
-Este espacio propone presentar la información para organizar el desarrollo del **Sistema de Gestión e Información de la Clínica Veterinaria**.  
-Esta tarea nos fue asignada en la asignatura **Bases de Datos I (FaCENA - UNNE)**.
-
 ---
 
 ## 📖 Índice
-
-1. [Descripción del Proyecto](#-descripción-del-proyecto)
+1. [Capítulo I: Introducción](#capítulo-i-introducción)
 2. [Estructura del Repositorio](#-estructura-del-repositorio)
 3. [Contenido por Temas](#-contenido-por-temas)
    - [Tema 01: Permisos y Roles](#tema-01-permisos-y-roles)
@@ -20,7 +16,7 @@ Esta tarea nos fue asignada en la asignatura **Bases de Datos I (FaCENA - UNNE)*
 
 ---
 
-## 📌 Descripción del Proyecto
+## 📌 Capítulo I: Introducción
 
 El proyecto consiste en la creación de un **sistema de gestión de información para una clínica veterinaria**, utilizando **SQL Server** como motor de base de datos.  
 Se incluyen prácticas de:
