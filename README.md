@@ -4,6 +4,7 @@
 
 ## 📖 Índice
 1. [Capítulo I: Introducción](#capítulo-i-introducción)
+2. [Capítulo IV: Desarrollo del Tema/Resultados](#desarrollo-del-tema--resultados))
 
 
 ---
@@ -54,6 +55,13 @@ Se deben considerar las siguientes restricciones en el diseño físico:
 
 **Alcance**
 
--Mejorar la organización y acceso a la información de mascotas y dueños.
+- Mejorar la organización y acceso a la información de mascotas y dueños.
 - Facilitar el registro y seguimiento de citas médicas y tratamientos.
 - Asegurar la integridad y seguridad de los datos.
+
+
+### 📌 CAPÍTULO IV: DESARROLLO DEL TEMA
+## Diseño del modelo relacional para el sistema: Gestión Veterinaria.
+Este modelo captura la estructura básica de un sistema para registrar información sobre dueños, mascotas, citas veterinarias, tratamientos y medicamentos utilizado en la clínica veterinaria.
+
+## Diagrama relacional
