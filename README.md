@@ -65,3 +65,19 @@ Se deben considerar las siguientes restricciones en el diseño físico:
 Este modelo captura la estructura básica de un sistema para registrar información sobre dueños, mascotas, citas veterinarias, tratamientos y medicamentos utilizado en la clínica veterinaria.
 
 ## Diagrama relacional
+
+![image alt](https://github.com/Kalkki2/Prueba/blob/dc11679f0e5a6fb119d29395be2fe2e4207ac52e/prueba_git/erdplus%20(18).png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
