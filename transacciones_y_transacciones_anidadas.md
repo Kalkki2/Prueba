@@ -46,7 +46,7 @@ __5.__ *Trade-offs en aislamiento vs rendimiento:*
 Escoger un nivel alto de aislamiento mejora integridad pero reduce rendimiento; escoger uno bajo mejora rendimiento pero incrementa riesgo de anomalías (lecturas sucias, no repetibles, etc.).  
 
 ### ¿Cómo funciona?
-Inicia con BEGIN TRANSACTION (o la sintaxis equivalente del motor de BD)  marca el inicio de la transacción.
-Ejecuta varias operaciones SQL (por ejemplo: actualizar una tabla, insertar en otra, borrar en una tercera, etc.).
-COMMIT  si todo ha ido correctamente, confirmar los cambios: todas las operaciones pasan a estado “permanente”.
-ROLLBACK  si ha ocurrido un error (una restricción violada, falta de espacio, problema de red, etc.), entonces deshacer todos los cambios realizados por la transacción, dejando la base de datos como estaba al inicio de la transacción.
+__1º__ Inicia con BEGIN TRANSACTION (o la sintaxis equivalente del motor de BD)  marca el inicio de la transacción.  
+__2º__ Ejecuta varias operaciones SQL (por ejemplo: actualizar una tabla, insertar en otra, borrar en una tercera, etc.).  
+__3º__ COMMIT  si todo ha ido correctamente, confirmar los cambios: todas las operaciones pasan a estado “permanente”.  
+__4º__ ROLLBACK  si ha ocurrido un error (una restricción violada, falta de espacio, problema de red, etc.), entonces deshacer todos los cambios realizados por la transacción, dejando la base de datos como estaba al inicio de la transacción.
