@@ -35,15 +35,15 @@ __6.__ *Facilitación del manejo de errores y recuperación*
 
 ### Desventajas de las transacciones 
 __1.__ *Sobrecarga de rendimiento:*
- Mantener las características ACID, los locks, los logs de transacción, validación y recuperación añade coste en tiempo-procesamiento y recursos.
+ Mantener las características ACID, los locks, los logs de transacción, validación y recuperación añade coste en tiempo-procesamiento y recursos.  
 __2.__ *Contención y bloqueo:* 
-Si la transacción abarca muchas operaciones o dura mucho tiempo, puede bloquear recursos durante su ejecución, lo que reduce concurrentes y provoca esperas. 
+Si la transacción abarca muchas operaciones o dura mucho tiempo, puede bloquear recursos durante su ejecución, lo que reduce concurrentes y provoca esperas.   
 __3.__ *Problemas en sistemas de alta concurrencia o distribuidos:* 
-En ambientes con muchas transacciones paralelas o bases de datos distribuidas, la simple transacción plana puede no escalar bien sin diseño adicional.
+En ambientes con muchas transacciones paralelas o bases de datos distribuidas, la simple transacción plana puede no escalar bien sin diseño adicional.  
 __4.__ *Duración limitada y dificultad en operaciones prolongadas:*
-Transacciones muy largas pueden generar bloqueos, retener conexiones o generar fallos más costosos al hacer rollback.
+Transacciones muy largas pueden generar bloqueos, retener conexiones o generar fallos más costosos al hacer rollback.  
 __5.__ *Trade-offs en aislamiento vs rendimiento:*
-Escoger un nivel alto de aislamiento mejora integridad pero reduce rendimiento; escoger uno bajo mejora rendimiento pero incrementa riesgo de anomalías (lecturas sucias, no repetibles, etc.).
+Escoger un nivel alto de aislamiento mejora integridad pero reduce rendimiento; escoger uno bajo mejora rendimiento pero incrementa riesgo de anomalías (lecturas sucias, no repetibles, etc.).  
 
 ### ¿Cómo funciona?
 Inicia con BEGIN TRANSACTION (o la sintaxis equivalente del motor de BD)  marca el inicio de la transacción.
