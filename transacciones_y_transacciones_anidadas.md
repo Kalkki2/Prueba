@@ -28,4 +28,25 @@ Evitan que los cambios no confirmados de una transacción interfieran o sean vis
 __4.__ *Durabilidad de los cambios confirmados*
   Una vez que una transacción hace COMMIT, los cambios son permanentes incluso ante fallas del sistema o reinicios. Esto da confianza en que los datos no “se pierdan” tras un error crítico.  
 __5.__ *Mejora de la integridad en operaciones complejas*
-   En procesos que involucran múltiples tablas, pasos o sistemas, las transacciones facilitan que todos esos pasos se consideren como uno solo: o se guardan todos o ninguno. Esto es especialmente útil en escenarios de negocio “complicados”.
+   En procesos que involucran múltiples tablas, pasos o sistemas, las transacciones facilitan que todos esos pasos se consideren como uno solo: o se guardan todos o ninguno. Esto es especialmente útil en escenarios de negocio “complicados”.  
+__6.__ *Facilitación del manejo de errores y recuperación*
+   Si ocurre un error durante la ejecución de un conjunto de operaciones dentro de una transacción, se puede usar ROLLBACK para retroceder al estado anterior y asegurar que los datos no queden “a medias”. Esto simplifica la lógica de error en el código.
+
+
+### Desventajas de las transacciones 
+__1.__ *Sobrecarga de rendimiento:*
+ Mantener las características ACID, los locks, los logs de transacción, validación y recuperación añade coste en tiempo-procesamiento y recursos.
+__2.__ *Contención y bloqueo:* 
+Si la transacción abarca muchas operaciones o dura mucho tiempo, puede bloquear recursos durante su ejecución, lo que reduce concurrentes y provoca esperas. 
+__3.__ *Problemas en sistemas de alta concurrencia o distribuidos:* 
+En ambientes con muchas transacciones paralelas o bases de datos distribuidas, la simple transacción plana puede no escalar bien sin diseño adicional.
+__4.__ *Duración limitada y dificultad en operaciones prolongadas:*
+Transacciones muy largas pueden generar bloqueos, retener conexiones o generar fallos más costosos al hacer rollback.
+__5.__ *Trade-offs en aislamiento vs rendimiento:*
+Escoger un nivel alto de aislamiento mejora integridad pero reduce rendimiento; escoger uno bajo mejora rendimiento pero incrementa riesgo de anomalías (lecturas sucias, no repetibles, etc.).
+
+### ¿Cómo funciona?
+Inicia con BEGIN TRANSACTION (o la sintaxis equivalente del motor de BD)  marca el inicio de la transacción.
+Ejecuta varias operaciones SQL (por ejemplo: actualizar una tabla, insertar en otra, borrar en una tercera, etc.).
+COMMIT  si todo ha ido correctamente, confirmar los cambios: todas las operaciones pasan a estado “permanente”.
+ROLLBACK  si ha ocurrido un error (una restricción violada, falta de espacio, problema de red, etc.), entonces deshacer todos los cambios realizados por la transacción, dejando la base de datos como estaba al inicio de la transacción.
