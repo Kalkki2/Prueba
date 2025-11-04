@@ -20,12 +20,12 @@ Según la documentación de Microsoft y recursos relacionados, en SQL Server las
 
 ### Ventajas del uso de transacciónes
 __1.__ *Atomicidad y Manejo de Errores:* 
-Permiten agrupar operaciones en un solo bloque lógico. Si alguna operación falla, se puede usar ROLLBACK para revertir todo el bloque al estado inicial, evitando cambios parciales. Esto simplifica la lógica de error en el código.
+Permiten agrupar operaciones en un solo bloque lógico. Si alguna operación falla, se puede usar ROLLBACK para revertir todo el bloque al estado inicial, evitando cambios parciales. Esto simplifica la lógica de error en el código.  
 __2.__ *Consistencia de Datos:* 
-Garantizan que la base de datos pase de un estado válido a otro, respetando las restricciones, la integridad referencial y las reglas de negocio.
+Garantizan que la base de datos pase de un estado válido a otro, respetando las restricciones, la integridad referencial y las reglas de negocio.  
 __3.__ *Aislamiento de Operaciones:* 
-Evitan que los cambios no confirmados de una transacción interfieran o sean vistos incorrectamente por otras transacciones concurrentes. Esto reduce problemas como lecturas "sucias", "no repetibles" o "fantasma".
+Evitan que los cambios no confirmados de una transacción interfieran o sean vistos incorrectamente por otras transacciones concurrentes. Esto reduce problemas como lecturas "sucias", "no repetibles" o "fantasma".  
 __4.__ *Durabilidad de los cambios confirmados*
-  Una vez que una transacción hace COMMIT, los cambios son permanentes incluso ante fallas del sistema o reinicios. Esto da confianza en que los datos no “se pierdan” tras un error crítico.
+  Una vez que una transacción hace COMMIT, los cambios son permanentes incluso ante fallas del sistema o reinicios. Esto da confianza en que los datos no “se pierdan” tras un error crítico.  
 __5.__ *Mejora de la integridad en operaciones complejas*
    En procesos que involucran múltiples tablas, pasos o sistemas, las transacciones facilitan que todos esos pasos se consideren como uno solo: o se guardan todos o ninguno. Esto es especialmente útil en escenarios de negocio “complicados”.
