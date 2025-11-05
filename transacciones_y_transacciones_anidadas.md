@@ -97,7 +97,7 @@ Cuando haces COMMIT TRANSACTION, este decrementa @@TRANCOUNT. Solo cuando @@TRAN
 Si haces ROLLBACK TRANSACTION en cualquier nivel (externo o interno) se revierte todo: la transacción exterior e interior. 
 En SQL Server se dice que existe “apariencia” de transacciones anidadas, pero en esencia es un bloque único con contador de niveles
 
-
+## CASO PRACTICO 2 *Registrar una  cita + trataniento + medicamento*
 *__Transaccion anidada exitosa__*
 ![image alt](img/tema03_transaccion_anidada_caso_exitoso_p1.png)
 ![image alt](img/tema03_transaccion_anidada_caso_p2.png)
