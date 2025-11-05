@@ -63,7 +63,8 @@ __Transaccion exitosa__*
 ![image alt](img/tema03_transaccion_simple_caso_exitoso.png)
 
 ![image alt](img/tema_03_transaccion_simple_exitosa_salida.png)
-*La  imagen muestra la correcta insercion del registro de una mascota y su respectivo dueño*  
+*La  imagen muestra la correcta insercion del registro de una mascota y su respectivo dueño*     
+
 
 
 
