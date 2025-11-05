@@ -68,15 +68,8 @@ En ese caso, se ejecuta un ROLLBACK TRANSACTION, que revierte todas las operacio
 
 *__Transaccion fallida__*
 ![image alt](img/tema03_transaccion_simple_caso_fallido.png)
-*En este caso, la transacción falló porque el valor ingresado en el campo telefono_dueno viola una restricción UNIQUE definida en la tabla Dueno.Esto significa que el número de teléfono ya existe en otro registro y no puede repetirse.
-Al detectarse esta violación, SQL Server genera un error, el control pasa al bloque CATCH y se ejecuta el ROLLBACK, revirtiendo tanto la inserción del dueño como la de la mascota para mantener la integridad de los datos.*
 
-
-
-
-*__Transaccion fallida__*
-![image alt](img/tema03_transaccion_simple_caso_fallido.png)
-
+![image alt](img/tema_03_transaccion_simple_fallida_salida.png)
 *En este caso, la transacción falló porque el valor ingresado en el campo telefono_dueno viola una restricción UNIQUE definida en la tabla Dueno.Esto significa que el número de teléfono ya existe en otro registro y no puede repetirse.
 Al detectarse esta violación, SQL Server genera un error, el control pasa al bloque CATCH y se ejecuta el ROLLBACK, revirtiendo tanto la inserción del dueño como la de la mascota para mantener la integridad de los datos.*
 
