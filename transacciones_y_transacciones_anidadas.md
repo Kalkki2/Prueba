@@ -107,3 +107,5 @@ __4.__ *Difícil depuración y testing*
 •Además, en entornos de prueba puede ser más difícil replicar el comportamiento real del sistema en producción.
 
 
+![image alt](img/tema03_transaccion_anidada_caso_fallido_p1.png)
+![image alt](img/tema03_transaccion_anidada_caso_fallido_p2.png)
