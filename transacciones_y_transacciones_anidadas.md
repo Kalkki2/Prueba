@@ -106,6 +106,13 @@ __4.__ *Difícil depuración y testing*
 •Las transacciones anidadas pueden hacer que el flujo de control sea más difícil de seguir y verificar: por ejemplo, ¿qué sucede cuando falla una sub-transacción?, ¿se revierte sólo ella?, ¿cómo se comunica al padre?, etc.
 •Además, en entornos de prueba puede ser más difícil replicar el comportamiento real del sistema en producción.
 
+*__Transaccion exitosa__*
+![image alt](img/tema03_transaccion_anidada_caso_exitoso_p1.png)
+![image alt](img/tema03_transaccion_anidada_caso_p2.png)
+![image alt](img/tema_03_transaccion_anidada_exitosa_salida.png)
 
+
+*__Transaccion fallida__*
 ![image alt](img/tema03_transaccion_anidada_caso_fallido_p1.png)
-![image alt](img/tema03_transaccion_anidada_caso_fallido_p2.png)
+![image alt](img/tema03_transaccion_anidada_caso_p2.png)
+![image alt](img/tema_03_transaccion_anidada_fallida_salida.png)
