@@ -59,12 +59,17 @@ Luego se inserta la mascota en la tabla Mascota, vinculándola con ese dueño me
 Si ocurre un error en cualquiera de las dos inserciones —por ejemplo, si el dni, teléfono o email del dueño ya existen y violan una restricción UNIQUE, o si el id_raza no existe y genera un error de clave foránea el bloque CATCH se activa.
 En ese caso, se ejecuta un ROLLBACK TRANSACTION, que revierte todas las operaciones realizadas dentro de la transacción, eliminando también al dueño recién insertado. Esto garantiza que no queden registros huérfanos ni inconsistentes (por ejemplo, una mascota sin dueño asociado).
 
-*La siguiente imagen muestra la correcta insercion del registro de una mascota y su respectivo dueño, la transaccion se realizo con exito*
+*Transaccion exitosa*
+![image alt](img/tema03_transaccion_simple_caso_exitoso.png)
 
-![image alt](img/tema03_transaccion_simple_caso_exitoso.png){ width=400px }
+![image alt](img/tema_03_transaccion_simple_exitosa_salida.png)
 
-![image alt](img/tema_03_transaccion_simple_exitosa_salida.png){ width=400px }
+*La  imagen muestra la correcta insercion del registro de una mascota y su respectivo dueño*
 
+*Transaccion fallida*
+![image alt](img/tema03_transaccion_simple_caso_fallido.png)
 
+*En este caso, la transacción falló porque el valor ingresado en el campo telefono_dueno viola una restricción UNIQUE definida en la tabla Dueno.Esto significa que el número de teléfono ya existe en otro registro y no puede repetirse.
+Al detectarse esta violación, SQL Server genera un error, el control pasa al bloque CATCH y se ejecuta el ROLLBACK, revirtiendo tanto la inserción del dueño como la de la mascota para mantener la integridad de los datos.*
 
 
