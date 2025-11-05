@@ -106,13 +106,15 @@ __4.__ *Difícil depuración y testing*
 •Las transacciones anidadas pueden hacer que el flujo de control sea más difícil de seguir y verificar: por ejemplo, ¿qué sucede cuando falla una sub-transacción?, ¿se revierte sólo ella?, ¿cómo se comunica al padre?, etc.
 •Además, en entornos de prueba puede ser más difícil replicar el comportamiento real del sistema en producción.
 
-*__Transaccion exitosa__*
+*__Transaccion anidada exitosa__*
 ![image alt](img/tema03_transaccion_anidada_caso_exitoso_p1.png)
 ![image alt](img/tema03_transaccion_anidada_caso_p2.png)
 ![image alt](img/tema_03_transaccion_anidada_exitosa_salida.png)
 
 
-*__Transaccion fallida__*
+*__Transaccion anidada fallida__*
 ![image alt](img/tema03_transaccion_anidada_caso_fallido_p1.png)
 ![image alt](img/tema03_transaccion_anidada_caso_p2.png)
 ![image alt](img/tema_03_transaccion_anidada_fallida_salida.png)
+*La transacción falla porque, aunque la cita médica y el tratamiento se insertan correctamente, al intentar registrar el medicamento en la tabla Tratamiento_Medicamento se usa un id_medicamento que no existe en la tabla Medicamento.
+Esto viola la restricción de clave foránea, genera un error en la transacción interna y provoca que toda la transacción —tanto la interna como la principal— sea revertida completamente para mantener la integridad de los datos.*
