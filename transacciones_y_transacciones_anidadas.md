@@ -63,8 +63,8 @@ En ese caso, se ejecuta un ROLLBACK TRANSACTION, que revierte todas las operacio
 ![image alt](img/tema03_transaccion_simple_caso_exitoso.png)
 
 ![image alt](img/tema_03_transaccion_simple_exitosa_salida.png)
-
 *La  imagen muestra la correcta insercion del registro de una mascota y su respectivo dueño*
+
 
 *Transaccion fallida*
 ![image alt](img/tema03_transaccion_simple_caso_fallido.png)
