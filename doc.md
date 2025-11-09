@@ -36,6 +36,28 @@ Evitalo si:
 * Los atributos adicionales tienen el mismo formato para cada registro — mejor ponerlos como columnas normales;
 * Necesitás la máxima performance, integridad estricta y normalización del esquema.
 
+Operaciones y funciones para el manejo de datos JSON
+SQL Server ofrece varias **funciones nativas** para manipular y consultar los datos almacenados en formato JSON.
+Las más utilizadas son:
+| Función         | Descripción                                                 |
+| --------------- | ----------------------------------------------------------- |
+| `ISJSON()`      | Verifica si una cadena es un JSON válido.                   |
+| `JSON_VALUE()`  | Extrae un valor escalar (texto o número) dentro de un JSON. |
+| `JSON_QUERY()`  | Extrae un objeto o arreglo JSON completo.                   |
+| `JSON_MODIFY()` | Modifica o agrega elementos dentro del JSON.                |
+| `OPENJSON()`    | Descompone un JSON en formato tabular (filas y columnas).   |
+
+
+##Caso práctico: Uso de datos JSON en SQL Server en la tabla dueno
+Para trabajar con JSON en SQL Server primero cambiamos la columna _direccion_duenio_ a NVARCHAR(MAX) para que pueda almacenar texto JSON, para luego insertar un objeto JSON completo
+
+
+
+
+
+
+
+
 ## Conclusión
 El manejo de datos JSON en SQL Server permite combinar la **estructura relacional tradicional** con la **flexibilidad de los documentos semiestructurados.**
 Gracias a sus funciones nativas **(JSON_VALUE, JSON_QUERY, JSON_MODIFY, OPENJSON)**, es posible almacenar, consultar y modificar información de manera eficiente.
