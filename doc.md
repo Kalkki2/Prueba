@@ -1,9 +1,8 @@
 # TEMA 4: Manejo de datos JSON
-Los datos en formato JSON (JavaScript Object Notation) son documentos semi-estructurados que pueden almacenarse en una base de datos relacional como SQL Server. Aunque tradicionalmente SQL Server no tenía un tipo de dato específico “JSON”, desde la versión 2016 ofrece funciones para tratar cadenas con formato JSON (por ejemplo, JSON_VALUE, JSON_QUERY, OPENJSON, ISJSON). 
-En este sentido, “manejo de datos JSON” se refiere a:
-* almacenar documentos JSON en columnas (por ejemplo tipo NVARCHAR(MAX)),
-* extraer valores o estructuras desde esos documentos usando funciones,
-* integrar esos datos semi-estructurados con los datos relacionales clásicos.
+## 1. Introducción
+El manejo de datos en formato **JSON (JavaScript Object Notation)** ha cobrado gran relevancia en los sistemas actuales debido a su flexibilidad, legibilidad y facilidad para intercambiar información entre aplicaciones.
+En SQL Server, aunque no existe un tipo de dato nativo JSON, se permite trabajar con él utilizando el tipo NVARCHAR(MAX), junto con un conjunto de **funciones JSON integradas** que facilitan su almacenamiento, consulta y modificación  (por ejemplo, JSON_VALUE, JSON_QUERY, OPENJSON, ISJSON). 
+El uso de JSON es especialmente útil en escenarios donde los datos presentan estructuras variables, o cuando es necesario integrar información desde servicios web, APIs o sistemas externos.
 
 ## Ventajas
 Algunas de las ventajas de usar JSON en SQL Server son:  
