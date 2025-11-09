@@ -1,5 +1,5 @@
 # TEMA 4: Manejo de datos JSON
-## 1. Introducción
+## Introducción
 El manejo de datos en formato **JSON (JavaScript Object Notation)** ha cobrado gran relevancia en los sistemas actuales debido a su flexibilidad, legibilidad y facilidad para intercambiar información entre aplicaciones.
 En SQL Server, aunque no existe un tipo de dato nativo JSON, se permite trabajar con él utilizando el tipo NVARCHAR(MAX), junto con un conjunto de **funciones JSON integradas** que facilitan su almacenamiento, consulta y modificación  (por ejemplo, JSON_VALUE, JSON_QUERY, OPENJSON, ISJSON). 
 El uso de JSON es especialmente útil en escenarios donde los datos presentan estructuras variables, o cuando es necesario integrar información desde servicios web, APIs o sistemas externos.
@@ -37,9 +37,11 @@ Evitalo si:
 * Necesitás la máxima performance, integridad estricta y normalización del esquema.
 
 ## Conclusión
-
+El manejo de datos JSON en SQL Server permite combinar la **estructura relacional tradicional** con la **flexibilidad de los documentos semiestructurados.**
+Gracias a sus funciones nativas **(JSON_VALUE, JSON_QUERY, JSON_MODIFY, OPENJSON)**, es posible almacenar, consultar y modificar información de manera eficiente.
+Al aplicar buenas prácticas de validación e indexación, el uso de JSON puede ser una excelente solución para escenarios de integración, configuración dinámica o intercambio de datos entre sistemas.
 El manejo de datos JSON en SQL Server es una herramienta poderosa para escenarios donde existe variabilidad en los datos, atributos opcionales y una necesidad de flexibilidad en el modelo. En el contexto de gestión de citas veterinarias, permite tratar de forma elegante aquellos datos adicionales de mascotas, clientes o tratamientos que no encajan perfectamente en un esquema rígido.
-Sin embargo —y esto es importante— no debe verse como sustituto del modelo relacional clásico: los datos que se usan frecuentemente para filtrar, agrupar, relacionar deberían permanecer en columnas normales estructuradas. El JSON debe usarse con criterio, donde aporte valor real.
+Sin embargo, y esto es importante, no debe verse como sustituto del modelo relacional clásico: los datos que se usan frecuentemente para filtrar, agrupar, relacionar deberían permanecer en columnas normales estructuradas. El JSON debe usarse con criterio, donde aporte valor real.
 Cuando se lo emplea correctamente, mejora agilidad de desarrollo y adaptabilidad. Si se lo abusa, puede generar problemas de rendimiento, mantenimiento y consistencia.
 
 
