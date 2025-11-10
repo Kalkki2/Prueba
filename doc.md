@@ -36,27 +36,42 @@ Evitalo si:
 * Los atributos adicionales tienen el mismo formato para cada registro — mejor ponerlos como columnas normales;
 * Necesitás la máxima performance, integridad estricta y normalización del esquema.
 
-Operaciones y funciones para el manejo de datos JSON
+## Operaciones y funciones para el manejo de datos JSON  
 SQL Server ofrece varias **funciones nativas** para manipular y consultar los datos almacenados en formato JSON.
-Las más utilizadas son:
-| Función         | Descripción                                                 |
-| --------------- | ----------------------------------------------------------- |
-| `ISJSON()`      | Verifica si una cadena es un JSON válido.                   |
-| `JSON_VALUE()`  | Extrae un valor escalar (texto o número) dentro de un JSON. |
-| `JSON_QUERY()`  | Extrae un objeto o arreglo JSON completo.                   |
-| `JSON_MODIFY()` | Modifica o agrega elementos dentro del JSON.                |
-| `OPENJSON()`    | Descompone un JSON en formato tabular (filas y columnas).   |
+Las más utilizadas son:  
+
+ | Función         | Descripción                                                 |
+ | --------------- | ----------------------------------------------------------- |
+ | `ISJSON()`      | Verifica si una cadena es un JSON válido.                   |
+ | `JSON_VALUE()`  | Extrae un valor escalar (texto o número) dentro de un JSON. |
+ | `JSON_QUERY()`  | Extrae un objeto o arreglo JSON completo.                   |
+ | `JSON_MODIFY()` | Modifica o agrega elementos dentro del JSON.                |
+ | `OPENJSON()`    | Descompone un JSON en formato tabular (filas y columnas).   |
 
 
-##Caso práctico: Uso de datos JSON en SQL Server en la tabla dueno
+## Caso práctico: Uso de datos JSON en SQL Server en la tabla dueno  
 Para trabajar con JSON en SQL Server primero cambiamos la columna _direccion_duenio_ a NVARCHAR(MAX) para que pueda almacenar texto JSON, para luego insertar un objeto JSON completo
 
+![image alt](img/insercion_objeto JSON_columna.png)
 
+Tambien a partir de un JSON se puede usar JSON_VALUE para extraer cada campo del JSON y cargarlo en las columnas individuales del registro.
 
+![image alt](img/insercion_objeto JSON_registro.png)
 
+Para visualizar los datos JSON se puede hacer 
+![image alt](img/muestra_JSON_almacenado_columna.png)
+La función ISJSON() devuelve 1 si el contenido es un JSON válido, ayudando a mantener la integridad de los datos.
 
+Salida
+![image alt](img/salida_JSON_almacenado_columna.png)
 
-
+Tambien se puede usar JSON_VALUE si querés mostrar valores individuales del JSON como columnas normales en el resultado.
+![image alt](img/muestra_registros_formato_JSON.png)
+Salida
+![image alt](img/salida_registros_formato_JSON.png)
+![image alt](img/muestra_registros_con_JSON_descompuesto_JSON.png)
+Salida
+![image alt](img/salida_registros_con_JSON_descompuesto.png)
 
 ## Conclusión
 El manejo de datos JSON en SQL Server permite combinar la **estructura relacional tradicional** con la **flexibilidad de los documentos semiestructurados.**
