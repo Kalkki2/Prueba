@@ -110,3 +110,12 @@ En SQL Server se dice que existe “apariencia” de transacciones anidadas, per
 ![image alt](img/tema_03_transaccion_anidada_fallida_salida.png)
 *La transacción falla porque, aunque la cita médica y el tratamiento se insertan correctamente, al intentar registrar el medicamento en la tabla Tratamiento_Medicamento se usa un id_medicamento que no existe en la tabla Medicamento.
 Esto viola la restricción de clave foránea, genera un error en la transacción interna y provoca que toda la transacción tanto la interna como la principal sea revertida completamente para mantener la integridad de los datos.*
+
+
+## Conclusion
+En conclusión, el uso de transacciones y transacciones anidadas es fundamental para asegurar la coherencia y confiabilidad de los datos en sistemas donde múltiples operaciones deben ejecutarse de forma coordinada.
+Las transacciones simples permiten que un bloque de operaciones funcione como una unidad indivisible: si todo sale bien se confirma, y si ocurre un error se revierte por completo, evitando información parcial o corrupta.
+Las transacciones anidadas amplían este concepto permitiendo dividir un proceso grande en subprocesos independientes, facilitando la claridad lógica, el control por etapas y la detección de errores dentro de cada parte del flujo.
+No obstante, su uso requiere conocimiento del comportamiento real del motor de base de datos: en SQL Server, los commits internos no confirman nada definitivamente y los rollbacks internos pueden revertir toda la transacción externa, lo que significa que deben implementarse con cuidado, con manejo estructurado de errores y una planificación clara.
+Bien utilizadas, las transacciones y las transacciones anidadas aportan robustez, orden y confiabilidad al manejo de datos en aplicaciones complejas.
+
