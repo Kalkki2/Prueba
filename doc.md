@@ -38,7 +38,7 @@ Supongamos que tenemos una tabla tradicional llamada producto:
       nombre VARCHAR(100),  
       precio DECIMAL(10,2),  
       stock INT  
-); ** 
+);** 
 
 **INSERT INTO producto VALUES  
 (1, 'Collar para perro', 1200.00, 25),  
@@ -71,32 +71,32 @@ Las más utilizadas son:
 
 **Ejemplos prácticos:**
 -- Extraer campos específicos
-SELECT
+**SELECT
     JSON_VALUE(datos, '$.nombre') AS nombre,
     JSON_VALUE(datos, '$.precio') AS precio
-FROM producto_json;
+FROM producto_json;**
 
 -- Extraer un objeto completo
-SELECT JSON_QUERY(datos, '$') AS objeto_completo FROM producto_json;
+**SELECT JSON_QUERY(datos, '$') AS objeto_completo FROM producto_json;**
 
 -- Modificar un valor dentro del JSON
-UPDATE producto_json
+**UPDATE producto_json
 SET datos = JSON_MODIFY(datos, '$.stock', 20)
-WHERE id_producto = 1;
+WHERE id_producto = 1;**
 
 -- Agregar una nueva propiedad
-UPDATE producto_json
+**UPDATE producto_json
 SET datos = JSON_MODIFY(datos, '$.categoria', 'Accesorios')
-WHERE id_producto = 1;
+WHERE id_producto = 1;**
 
 -- Convertir JSON a tabla
-SELECT *
+**SELECT *
 FROM OPENJSON((SELECT datos FROM producto_json WHERE id_producto = 1))
 WITH (
     nombre NVARCHAR(100),
     precio DECIMAL(10,2),
     stock INT
-);
+);**
 
 Estas funciones permiten consultar y modificar datos JSON **sin necesidad de desnormalizar la base** ni alterar su estructura.
 
@@ -104,7 +104,7 @@ Estas funciones permiten consultar y modificar datos JSON **sin necesidad de des
 Aunque el uso de JSON otorga flexibilidad, puede impactar el rendimiento si se consulta frecuentemente información interna del documento.
 Por eso, es importante aplicar algunas prácticas de optimización:
 
-## a) **Extraer los valores más consultados** en columnas calculadas o indexadas:
+**a) Extraer los valores más consultados** en columnas calculadas o indexadas:
 
 **ALTER TABLE producto_json
 ADD nombre AS JSON_VALUE(datos, '$.nombre') PERSISTED;** 
@@ -113,11 +113,11 @@ ADD nombre AS JSON_VALUE(datos, '$.nombre') PERSISTED;**
 
 Esto permite realizar búsquedas rápidas sin tener que analizar todo el texto JSON.
 
-## b) **Validar los datos al momento de la inserción** con ISJSON() para evitar errores posteriores.
+**b) Validar los datos al momento de la inserción** con ISJSON() para evitar errores posteriores.
 
-## c) **Usar OPENJSON() solo cuando sea necesario** convertir los datos a formato tabular, ya que esta operación es más costosa.
+**c) Usar OPENJSON() solo cuando sea necesario** convertir los datos a formato tabular, ya que esta operación es más costosa.
 
-## d) **Combinar consultas relacionales y JSON** para mantener equilibrio entre flexibilidad y rendimiento:
+**d) Combinar consultas relacionales y JSON** para mantener equilibrio entre flexibilidad y rendimiento:
 
 **SELECT id_producto, JSON_VALUE(datos, '$.nombre') AS nombre
 FROM producto_json
