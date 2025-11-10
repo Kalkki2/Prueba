@@ -53,7 +53,6 @@ Las más utilizadas son:
 Para trabajar con JSON en SQL Server primero cambiamos la columna _direccion_duenio_ a NVARCHAR(MAX) para que pueda almacenar texto JSON, para luego insertar un objeto JSON completo. 
 
 ![image alt](img/insercion_objeto_JSON_columna.png)  
-![image alt](imga/insercion_objeto_JSON_columna.png)
 
 Tambien a partir de un JSON se puede usar JSON_VALUE para extraer cada campo del JSON y cargarlo en las columnas individuales del registro.
 
