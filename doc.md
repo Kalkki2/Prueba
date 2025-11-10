@@ -1,4 +1,4 @@
-# TEMA 4: Manejo de Datos JSON en SQL Server
+# TEMA 4: Manejo de Datos de Tipo JSON en SQL Server
 ## 1. Introducción
 El manejo de datos en formato **JSON (JavaScript Object Notation)** ha cobrado gran relevancia en los sistemas actuales debido a su flexibilidad, legibilidad y facilidad para intercambiar información entre aplicaciones.
 En SQL Server, aunque no existe un tipo de dato nativo JSON, se permite trabajar con él utilizando el tipo NVARCHAR(MAX), junto con un conjunto de **funciones JSON integradas** que facilitan su almacenamiento, consulta y modificación.
@@ -9,18 +9,18 @@ En SQL Server, una tabla puede almacenar documentos JSON completos dentro de un 
 Esto permite conservar la estructura jerárquica del JSON sin necesidad de definir previamente todas las columnas.
 
 
-**Ejemplo:**
-CREATE TABLE producto_json (  
-    id_producto INT IDENTITY(1,1) PRIMARY KEY,  
-    datos NVARCHAR(MAX)  
-);
+**Ejemplo:**  
+**CREATE TABLE producto_json (  
+      id_producto INT IDENTITY(1,1) PRIMARY KEY,  
+      datos NVARCHAR(MAX)  
+);**
 
 En este ejemplo, la columna datos contendrá la información estructurada en formato JSON.
 También es posible **validar** que los datos insertados sean JSON válidos mediante una restricción CHECK:  
 
-ALTER TABLE producto_json  
+**ALTER TABLE producto_json  
 ADD CONSTRAINT chk_datos_json_validos  
-CHECK (ISJSON(datos) > 0);  
+CHECK (ISJSON(datos) > 0);**  
 
 La función ISJSON() devuelve 1 si el contenido es un JSON válido, ayudando a mantener la integridad de los datos.  
 
@@ -32,29 +32,26 @@ SQL Server incluye funciones que permiten **generar JSON** directamente desde co
 
 Supongamos que tenemos una tabla tradicional llamada producto:
 
-CREATE TABLE producto (  
-    id INT,  
-    nombre VARCHAR(100),  
-    precio DECIMAL(10,2),  
-    stock INT  
-);  
+**CREATE TABLE producto (  
+      id INT,  
+      nombre VARCHAR(100),  
+      precio DECIMAL(10,2),  
+      stock INT  
+); ** 
 
-INSERT INTO producto VALUES  
+**INSERT INTO producto VALUES  
 (1, 'Collar para perro', 1200.00, 25),  
-(2, 'Comedero doble', 1800.00, 15);  
+(2, 'Comedero doble', 1800.00, 15);**  
 
 Podemos convertir su contenido a formato JSON e insertarlo en producto_json:
 
---------------------------------------------------------------------  
-INSERT INTO producto_json (datos)  
+**INSERT INTO producto_json (datos)  
 SELECT (SELECT nombre, precio, stock FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)  
 FROM producto  
-WHERE id = 1;  
+WHERE id = 1;**  
 
 El resultado en la columna datos será algo como:  
-
---------------------------------------------------------------------  
-{"nombre":"Collar para perro","precio":1200.00,"stock":25}  
+**{"nombre":"Collar para perro","precio":1200.00,"stock":25}**  
 
 
 De esta forma, una tabla relacional puede alimentar una tabla con estructura JSON, lo que facilita la interoperabilidad entre modelos de datos distintos.
