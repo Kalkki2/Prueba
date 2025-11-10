@@ -52,7 +52,7 @@ __3º__ COMMIT  si todo ha ido correctamente, confirmar los cambios: todas las o
 __4º__ ROLLBACK  si ha ocurrido un error (una restricción violada, falta de espacio, problema de red, etc.), entonces deshacer todos los cambios realizados por la transacción, dejando la base de datos como estaba al inicio de la transacción.
 
 
-## CASO PRACTICO *Registrar una nueva mascota y su dueño*
+### CASO PRACTICO *Registrar una nueva mascota y su dueño*
 
 Supongamos que llega un cliente nuevo con su mascota.Primero se intenta registrar al dueño en la tabla Dueno; si la inserción tiene éxito, se obtiene el ID generado (@id_dueno) con SCOPE_IDENTITY().
 Luego se inserta la mascota en la tabla Mascota, vinculándola con ese dueño mediante id_dueno.Todo esto ocurre dentro de una única transacción, lo que significa que ambas operaciones deben completarse correctamente para que se confirme (COMMIT TRANSACTION).
@@ -97,7 +97,7 @@ Cuando haces COMMIT TRANSACTION, este decrementa @@TRANCOUNT. Solo cuando @@TRAN
 Si haces ROLLBACK TRANSACTION en cualquier nivel (externo o interno) se revierte todo: la transacción exterior e interior. 
 En SQL Server se dice que existe “apariencia” de transacciones anidadas, pero en esencia es un bloque único con contador de niveles
 
-## CASO PRACTICO 2 *Registrar una  cita + tratamiento + medicamento*
+### CASO PRACTICO 2 *Registrar una  cita + tratamiento + medicamento*
 *__Transaccion anidada exitosa__*
 ![image alt](img/tema03_transaccion_anidada_caso_exitoso_p1.png)
 ![image alt](img/tema03_transaccion_anidada_caso_p2.png)
