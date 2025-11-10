@@ -10,6 +10,7 @@ Esto permite conservar la estructura jerárquica del JSON sin necesidad de defin
 
 
 **Ejemplo:**  
+
 **CREATE TABLE producto_json (  
       id_producto INT IDENTITY(1,1) PRIMARY KEY,  
       datos NVARCHAR(MAX)  
@@ -104,12 +105,12 @@ Aunque el uso de JSON otorga flexibilidad, puede impactar el rendimiento si se c
 Por eso, es importante aplicar algunas prácticas de optimización:
 
 ## a) **Extraer los valores más consultados** en columnas calculadas o indexadas:
-============================================================================
-ALTER TABLE producto_json
-ADD nombre AS JSON_VALUE(datos, '$.nombre') PERSISTED;
 
-CREATE INDEX idx_nombre_json ON producto_json(nombre);
-============================================================================
+**ALTER TABLE producto_json
+ADD nombre AS JSON_VALUE(datos, '$.nombre') PERSISTED;** 
+
+**CREATE INDEX idx_nombre_json ON producto_json(nombre);**
+
 Esto permite realizar búsquedas rápidas sin tener que analizar todo el texto JSON.
 
 ## b) **Validar los datos al momento de la inserción** con ISJSON() para evitar errores posteriores.
@@ -117,11 +118,10 @@ Esto permite realizar búsquedas rápidas sin tener que analizar todo el texto J
 ## c) **Usar OPENJSON() solo cuando sea necesario** convertir los datos a formato tabular, ya que esta operación es más costosa.
 
 ## d) **Combinar consultas relacionales y JSON** para mantener equilibrio entre flexibilidad y rendimiento:
-============================================================================
-SELECT id_producto, JSON_VALUE(datos, '$.nombre') AS nombre
+
+**SELECT id_producto, JSON_VALUE(datos, '$.nombre') AS nombre
 FROM producto_json
-WHERE JSON_VALUE(datos, '$.precio') > 1000;
-============================================================================
+WHERE JSON_VALUE(datos, '$.precio') > 1000;**
 
 ## 6. En conclusión
 El manejo de datos JSON en SQL Server permite combinar la **estructura relacional tradicional** con la **flexibilidad de los documentos semiestructurados.**
