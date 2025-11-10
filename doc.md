@@ -71,31 +71,32 @@ Las más utilizadas son:
 
 **Ejemplos prácticos:**
 -- Extraer campos específicos
-**SELECT
-    JSON_VALUE(datos, '$.nombre') AS nombre,
-    JSON_VALUE(datos, '$.precio') AS precio
-FROM producto_json;**
+**SELECT  
+    JSON_VALUE(datos, '$.nombre') AS nombre,  
+    JSON_VALUE(datos, '$.precio') AS precio  
+FROM producto_json;**  
 
 -- Extraer un objeto completo
-**SELECT JSON_QUERY(datos, '$') AS objeto_completo FROM producto_json;**
+**SELECT JSON_QUERY(datos, '$') AS objeto_completo   
+FROM producto_json;**
 
 -- Modificar un valor dentro del JSON
-**UPDATE producto_json
-SET datos = JSON_MODIFY(datos, '$.stock', 20)
-WHERE id_producto = 1;**
+**UPDATE producto_json  
+SET datos = JSON_MODIFY(datos, '$.stock', 20)  
+WHERE id_producto = 1;**  
 
 -- Agregar una nueva propiedad
-**UPDATE producto_json
-SET datos = JSON_MODIFY(datos, '$.categoria', 'Accesorios')
-WHERE id_producto = 1;**
+**UPDATE producto_json  
+SET datos = JSON_MODIFY(datos, '$.categoria', 'Accesorios')  
+WHERE id_producto = 1;**  
 
 -- Convertir JSON a tabla
-**SELECT *
-FROM OPENJSON((SELECT datos FROM producto_json WHERE id_producto = 1))
-WITH (
-    nombre NVARCHAR(100),
-    precio DECIMAL(10,2),
-    stock INT
+**SELECT *  
+FROM OPENJSON((SELECT datos FROM producto_json WHERE id_producto = 1))  
+WITH (  
+    nombre NVARCHAR(100),  
+    precio DECIMAL(10,2),  
+    stock INT  
 );**
 
 Estas funciones permiten consultar y modificar datos JSON **sin necesidad de desnormalizar la base** ni alterar su estructura.
