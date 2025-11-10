@@ -69,7 +69,7 @@ Tambien se puede usar JSON_VALUE si querés mostrar valores individuales del JSO
 ![image alt](imga/muestra_registros_formato_JSON.png)  
 Salida  
 ![image alt](imga/salida_registros_formato_JSON.png)  
-![image alt](imga/muestra_registros_con_JSON_descompuesto_JSON.png)  
+![image alt](imga/muestra_registros_con_JSON_descompuesto.png)  
 Salida
 ![image alt](imga/salida_registros_con_JSON_descompuesto.png)    
 
