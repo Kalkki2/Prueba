@@ -52,11 +52,11 @@ Las más utilizadas son:
 ## Caso práctico: Uso de datos JSON en SQL Server en la tabla dueno  
 Para trabajar con JSON en SQL Server primero cambiamos la columna _direccion_duenio_ a NVARCHAR(MAX) para que pueda almacenar texto JSON, para luego insertar un objeto JSON completo. 
 
-![image alt](imga/insercion_objeto_JSON_columna.png)
+![image alt](imga/insercion_objeto_JSON_columna.png)  
 
 Tambien a partir de un JSON se puede usar JSON_VALUE para extraer cada campo del JSON y cargarlo en las columnas individuales del registro.
 
-![image alt](imga/insercion_objeto_JSON_registro.png)
+![image alt](imga/insercion_objeto_JSON_registro.png)  
 
 Para visualizar los datos JSON se puede hacer 
 ![image alt](imga/muestra_JSON_almacenado_columna.png)
@@ -68,10 +68,10 @@ Salida
 Tambien se puede usar JSON_VALUE si querés mostrar valores individuales del JSON como columnas normales en el resultado.
 ![image alt](imga/muestra_registros_formato_JSON.png)
 Salida
-![image alt](imga/salida_registros_formato_JSON.png)
-![image alt](imga/muestra_registros_con_JSON_descompuesto_JSON.png)
+![image alt](imga/salida_registros_formato_JSON.png)  
+![image alt](imga/muestra_registros_con_JSON_descompuesto_JSON.png)  
 Salida
-![image alt](imga/salida_registros_con_JSON_descompuesto.png)
+![image alt](imga/salida_registros_con_JSON_descompuesto.png)  
 
 ## Conclusión
 El manejo de datos JSON en SQL Server permite combinar la **estructura relacional tradicional** con la **flexibilidad de los documentos semiestructurados.**
