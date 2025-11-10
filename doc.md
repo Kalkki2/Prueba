@@ -69,28 +69,28 @@ Las más utilizadas son:
 | `JSON_MODIFY()` | Modifica o agrega elementos dentro del JSON.                |
 | `OPENJSON()`    | Descompone un JSON en formato tabular (filas y columnas).   |
 
-**Ejemplos prácticos:**
--- Extraer campos específicos
+**Ejemplos prácticos:**  
+-- Extraer campos específicos  
 **SELECT  
     JSON_VALUE(datos, '$.nombre') AS nombre,  
     JSON_VALUE(datos, '$.precio') AS precio  
 FROM producto_json;**  
 
--- Extraer un objeto completo
+-- Extraer un objeto completo  
 **SELECT JSON_QUERY(datos, '$') AS objeto_completo   
 FROM producto_json;**
 
--- Modificar un valor dentro del JSON
+-- Modificar un valor dentro del JSON  
 **UPDATE producto_json  
 SET datos = JSON_MODIFY(datos, '$.stock', 20)  
 WHERE id_producto = 1;**  
 
--- Agregar una nueva propiedad
+-- Agregar una nueva propiedad  
 **UPDATE producto_json  
 SET datos = JSON_MODIFY(datos, '$.categoria', 'Accesorios')  
 WHERE id_producto = 1;**  
 
--- Convertir JSON a tabla
+-- Convertir JSON a tabla  
 **SELECT *  
 FROM OPENJSON((SELECT datos FROM producto_json WHERE id_producto = 1))  
 WITH (  
