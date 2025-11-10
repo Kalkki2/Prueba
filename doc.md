@@ -52,7 +52,7 @@ Las más utilizadas son:
 ## Caso práctico: Uso de datos JSON en SQL Server en la tabla dueno  
 Para trabajar con JSON en SQL Server primero cambiamos la columna _direccion_duenio_ a NVARCHAR(MAX) para que pueda almacenar texto JSON, para luego insertar un objeto JSON completo. 
 
-![image alt]([imga](https://github.com/Kalkki2/Prueba/tree/main/imga/insercion_objeto_JSON_columna.png)  
+![image alt](https://github.com/Kalkki2/Prueba/tree/main/imga/insercion_objeto_JSON_columna.png)  
 
 Tambien a partir de un JSON se puede usar JSON_VALUE para extraer cada campo del JSON y cargarlo en las columnas individuales del registro.
 
